@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Know Your Worth</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            transition: background 0.5s ease-in-out;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            max-width: 750px;
+            text-align: left;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #d9534f;
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: #c9302c;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin: 10px 0;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #d9534f;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-left: 5px solid #d9534f;
+            background: rgba(255, 243, 243, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .section:hover {
+            transform: scale(1.02);
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 16px;
+            color: white;
+            opacity: 0.8;
+        }
+
+        #motivational-text {
+            font-size: 22px;
+            font-weight: bold;
+            color: #c9302c;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <audio id="background-music" autoplay loop>
+        <source src="TIME/bensound-sunny.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="container">
+        <h1>Know Your Worth</h1>
+
+        <button class="button" onclick="changeMessage()">Click for Motivation</button>
+        <p id="motivational-text"></p>
+
+        <div class="section" onclick="toggleHighlight(this)">
+            <h2>Let Them</h2>
+            <p>Let them lose you if they think you are not enough.</p>
+            <p>If they don’t see your value, let them walk.</p>
+            <p>People make time for who they care about.</p>
+            <p>If they are not making time for you, then believe them when they say they are too busy.</p>
+        </div>
+
+        <div class="section" onclick="toggleHighlight(this)">
+            <h2>Don’t Force It</h2>
+            <p>Don’t force it.</p>
+            <p>If they wanted to be with you, they would be.</p>
+            <p>If they choose someone or something over you, let them.</p>
+            <p>It hurts, but you can’t make someone feel what they don’t.</p>
+        </div>
+
+        <div class="section" onclick="toggleHighlight(this)">
+            <h2>Remember Your Worth</h2>
+            <p>You shouldn’t beg for someone to care, to love, to put in the effort.</p>
+            <p>If they are okay with going weeks without you, let them.</p>
+            <p>Focus on those who see your worth without you having to prove it.</p>
+            <p>At the end of the day, remember your worth.</p>
+            <p>Don’t settle for less than what you deserve.</p>
+            <p>Keep your standards high and your circle tight.</p>
+            <p>The right people will value you and give you time.</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 ❤ NYANTAKYI FRANCIS ❤ Ghana</p>
+    </footer>
+
+    <script>
+        function changeMessage() {
+            const messages = [
+                "You are enough just as you are.",
+                "The right people will appreciate you.",
+                "Never settle for less than you deserve.",
+                "Your worth isn’t defined by others.",
+                "Self-respect is your superpower."
+            ];
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById("motivational-text").innerText = randomMessage;
+        }
+
+        function toggleHighlight(section) {
+            section.classList.toggle("highlighted");
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const music = document.getElementById("background-music");
+            music.volume = 0.5;
+            music.play().catch(error => {
+                console.log("Autoplay prevented: " + error);
+            });
+        });
+    </script>
+</body>
+
+</html>
